@@ -14,7 +14,7 @@ class Electeur
 		Electeur(Ville);
 		~Electeur();
 		Ville get_ville();
-		int get_vote();
+		void set_vote();
 		int get_num();
 };
 
