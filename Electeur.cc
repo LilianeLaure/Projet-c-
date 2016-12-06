@@ -8,9 +8,9 @@ Ville Electeur :: get_ville()
 {
 	return ville_;
 }
-int Electeur:: get_vote()
+void Electeur:: set_vote(int i)
 {
-	return vote_;
+	vote_=i;
 }		
 int Electeur::get_num()
 {
