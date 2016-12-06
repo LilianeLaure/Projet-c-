@@ -1,5 +1,5 @@
 main: main.o 
-	g++ -Wall -g -o main main.o Simulateur.o
+	g++ -Wall -g -o main main.o 
     
 main.o: main.cc 
 	g++ -g -Wall -c main.cc

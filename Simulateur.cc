@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Simulateur.hh"
 
-Simulateur::Simulateur(int nombre):nombre_(nombre), pi_(15), pb_(40)
+Simulateur::Simulateur(int nombre,Program prog):nombre_(nombre), program_(prog),pi_(15), pb_(40)
 {
 	for(int i=0 ; i<nombre_ ; ++i)
 	{
@@ -12,6 +12,10 @@ Simulateur::Simulateur(int nombre):nombre_(nombre), pi_(15), pb_(40)
 }
 
 Simulateur::~Simulateur(){}
+
+Program Simulateur::get_program{
+	return program_;
+}
 
 void Simulateur::add_candidat(Candidat& candidat)
 {
@@ -40,7 +44,7 @@ void Simulateur::run()
 }
 
 
-int max_phrases()
+int Simulateur::max_phrases()
 {
 	int n=vector_candidats[0].get_num_Candidat();
 	int max=vector_candidats[0].get_nb_phrases_idiotes();
@@ -53,8 +57,9 @@ int max_phrases()
 		}
 	return n;
 }
+}
 
-int min_phrases()
+int Simulateur::min_phrases()
 {
 	int n=vector_candidats[0].get_num_Candidat();
 	int min=vector_candidats[0].get_nb_phrases_idiotes();
@@ -66,4 +71,5 @@ int min_phrases()
 			n=it.get_num_Candidat();
 		}
 	return n;
+}
 }

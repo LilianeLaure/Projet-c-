@@ -1,40 +1,48 @@
 #pragma once
 #include <iostream>
 #include "Electeur.hh"
-#include <list>
+#include "Simulateur.hh"
+#include <vector>
+#include <string>
+#include "program.hh"
+#include "math.h"
+#include <ctime>
+#include <cstdlib> 
 
+using namespace std;
 class Candidat:public Electeur
 {
 	private :
 		int num_Candidat;
 		int resultat;
+		int taille_program;
 		//Program program_; ////programme général
 		int pb_;///proba de dire des choses idiotes
-		int taille_program;
 		vector<string> program_perso;
 		int nb_phrases_idiotes;
 	public :
 		static int num_cand;
-		Candidat(int taille_prog,int pb);
+		Candidat(int taille_prog,int pb,Simulateur* sim);
 		~Candidat();
 		int get_nb_phrases_idiotes();
-		vector<string> get_phrase_idiote(Program program_);
+		vector<string> get_phrase(Program program_);
 };
 
 int Candidat::num_cand=0;
 
-Candidat::Candidat(int size,int pb,Simu * sim):
+Candidat::Candidat(int size,int pb,Simulateur * sim):
+	Electeur(Paris),
 	taille_program(size),
-	pb_(pb),
+	pb_(pb)
 	{
 	num_Candidat=num_cand;
-	program_perso=get_phrase_idiote(Program (*sim).get_program());
+	program_perso=(*this).get_phrase((*sim).get_program());
 	num_cand++;
 	}
 
 Candidat::~Candidat(){}
 
-vector<string> Candidat::get_phrase_idiote(Program prog){
+vector<string> Candidat::get_phrase(Program prog){
 		vector<string> program=prog.get_prog();
 		vector<string> chaine_phrase;
 		for(int i=0;i<(int)program.size()/2;++i){
