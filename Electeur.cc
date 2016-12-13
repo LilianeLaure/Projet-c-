@@ -2,7 +2,7 @@
 
 int Electeur :: n_=0;
 
-Electeur::Electeur(Ville ville): vote_(-1), ville_(ville), num_(Electeur::n_++){}
+Electeur::Electeur(Ville ville): num_(Electeur::n_++), ville_(ville),vote_(-1){}
 Electeur::~Electeur(){}
 Ville Electeur :: get_ville()
 {
