@@ -30,8 +30,8 @@ vector<string> Candidat::get_phrase(Program prog){
 			cpt++;
 			}
 		}
-	//	for(int i=0;i<(int)chaine_phrase.size();++i)
-		//	std::cout<<chaine_phrase[i]<<std::endl;
+		for(int i=0;i<(int)chaine_phrase.size();++i)
+			std::cout<<chaine_phrase[i]<<std::endl;
 		return chaine_phrase;
 }
 

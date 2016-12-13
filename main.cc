@@ -25,6 +25,7 @@ int main(){
 		cout << "probabilité en pourcentage du candidat n° "<<i+1<< " de dire des phrases idiotes ?"<<std::endl;
 		cin>>pb;
 		tab+="a"+to_string(i);
+		std::cout << "PROGRAMME du candidat n° "<< i+1<<std::endl;
 		Candidat tab(taille,pb,&simu,prog_general);
 		simu.add_Candidat(tab);
 	}			
