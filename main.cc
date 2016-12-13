@@ -12,14 +12,22 @@
 using namespace std;
 
 int main(){
+	int n,taille,pb;
+	cout<<"Combien de candidats voulez-vous? ";
+	cin>>n;
 	Program prog_general("program.txt");
 	Simulateur simu(100);//nbre de population
-	Candidat a1(2,30,&simu,prog_general);
-	Candidat a2(3,50,&simu,prog_general);
-	Candidat a3(4,70,&simu,prog_general);
-	simu.add_Candidat(a1);
-	simu.add_Candidat(a2);
-	simu.add_Candidat(a3);
+	string tab="";
+	for (int i=0;i<n;i++){
+		tab="";
+		cout << "taille max du programme du candidat n° "<<i+1<<"?"<<std::endl;
+		cin>>taille;
+		cout << "probabilité en pourcentage du candidat n° "<<i+1<< " de dire des phrases idiotes ?"<<std::endl;
+		cin>>pb;
+		tab+="a"+to_string(i);
+		Candidat tab(taille,pb,&simu,prog_general);
+		simu.add_Candidat(tab);
+	}			
 	simu.run();
 	return 0;
 
