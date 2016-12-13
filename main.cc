@@ -20,14 +20,17 @@ int main(){
 	string tab="";
 	for (int i=0;i<n;i++){
 		tab="";
+		std::cout<<std::endl;
 		cout << "taille max du programme du candidat n° "<<i+1<<"?"<<std::endl;
 		cin>>taille;
 		cout << "probabilité en pourcentage du candidat n° "<<i+1<< " de dire des phrases idiotes ?"<<std::endl;
 		cin>>pb;
 		tab+="a"+to_string(i);
 		std::cout << "PROGRAMME du candidat n° "<< i+1<<std::endl;
+		std::cout<<"-----------------------------"<<std::endl;		
 		Candidat tab(taille,pb,&simu,prog_general);
 		simu.add_Candidat(tab);
+		std::cout<<"-----------------------------"<<std::endl;
 	}			
 	simu.run();
 	return 0;

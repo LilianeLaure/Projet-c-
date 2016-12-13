@@ -5,8 +5,6 @@
 #include <vector>
 #include <string>
 #include "program.hh"
-#include "math.h"
-#include <ctime>
 #include <cstdlib>
  
 class Simulateur;
