@@ -20,19 +20,19 @@ Program::Program(const char* file){
 				}
 			}
 			program_gauche_=chaineVectorEclate_gauche;
-			if(line.compare("droite:")==0){
-				while(getline(fichier,line))
-				{
-					if(!line.empty()){
-		    				vector<string> chaine=split(line,";");
-		    				chaineVectorEclate_droite.push_back(chaine[0]);
-		 				chaineVectorEclate_droite.push_back(chaine[1]);
-						chaineVectorEclate_.push_back(chaine[0]);
-						chaineVectorEclate_.push_back(chaine[1]);
-					}
+		}
+		if(line.compare("droite:")==0){
+			while(getline(fichier,line))
+			{
+				if(!line.empty()){
+	    				vector<string> chaine=split(line,";");
+	    				chaineVectorEclate_droite.push_back(chaine[0]);
+	 				chaineVectorEclate_droite.push_back(chaine[1]);
+					chaineVectorEclate_.push_back(chaine[0]);
+					chaineVectorEclate_.push_back(chaine[1]);
 				}
-			program_droite_=chaineVectorEclate_droite;
 			}
+			program_droite_=chaineVectorEclate_droite;
 		}
     	//	std::cout<<"s: "<<chaine[0]<<" "<<chaine[1]<<std::endl;
 		

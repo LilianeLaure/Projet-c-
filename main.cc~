@@ -6,6 +6,8 @@
 #include "Candidat.hh"
 #include "Electeur.hh"
 #include "Simulateur.hh"
+#include <ctime>
+#include "math.h"
 #include <cstdlib> 
 using namespace std;
 

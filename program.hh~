@@ -12,6 +12,7 @@ class Program
 {
 public:
 	Program(const char* file);
+	//Program::Program(Simulateur&);
 	~Program(){};
 	vector<string> get_prog_gauche();
 	vector<string> get_prog_droite();

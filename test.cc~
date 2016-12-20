@@ -15,7 +15,6 @@ int main(int argc, char **argv) {
 			while(getline(fichier,line)&&line.compare("droite:")!=0){
 				std::cout<<line<<std::endl;
 			}
-			getline(fichier,line);
 			if(line.compare("droite:")==0){
 				std::cout<<"droite"<<std::endl;
 			}
