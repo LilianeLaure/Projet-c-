@@ -2,9 +2,6 @@
 #include <iostream>
 #include "Candidat_Gauche.hh"
 #include "Candidat_Droite.hh"
-#include "Electeur_Droite.hh"
-#include "Electeur_Gauche.hh"
-#include "Electeur.hh"
 #include <vector>
 #include <list>
 

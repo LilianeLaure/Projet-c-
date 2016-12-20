@@ -1,4 +1,4 @@
-#include "Candidat.hh"
+#include "Candidat_Gauche.hh"
 int Candidat_Gauche::num_cand=0;
 
 Candidat_Gauche::Candidat_Gauche(int size,int pb,Simulateur * sim,Program &program):

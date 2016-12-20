@@ -5,7 +5,6 @@
 #include <string>
 #include "Candidat_Gauche.hh"
 #include "Candidat_Droite.hh"
-#include "Electeur.hh"
 #include "Simulateur.hh"
 #include <cstdlib> 
 using namespace std;

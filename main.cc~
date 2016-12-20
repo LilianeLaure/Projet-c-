@@ -5,10 +5,10 @@
 #include <string>
 #include "Candidat_Gauche.hh"
 #include "Candidat_Droite.hh"
-#include "Electeur.hh"
 #include "Simulateur.hh"
 #include <cstdlib> 
 using namespace std;
+dfvdlfknlkbnldlkbnlf
 
 int main(){
 	int n,n1,n2,taille,pb;
@@ -35,13 +35,13 @@ int main(){
 		std::cout << "PROGRAMME du candidat n° "<< i+1<<std::endl;
 		std::cout<<"-----------------------------"<<std::endl;
 		if (i<n1){
-
+			//gauche
 			Candidat_Gauche tab(taille,pb,&simu,prog_general);
 			simu.add_Candidat_Gauche(tab);
 			cout<<tab;
 		}
 		else{
-
+			//droite
 			Candidat_Droite tab(taille,pb,&simu,prog_general);
 			simu.add_Candidat_Droite(tab);
 			cout<<tab;
