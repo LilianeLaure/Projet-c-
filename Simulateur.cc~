@@ -22,7 +22,7 @@ Simulateur::Simulateur(int nombre):pb_(40),pi_(15),nombre_(nombre)
 		}
 		else{
 			Electeur_Droite* electeur=new Electeur_Droite(ville);
-			liste_electeurs.push_back(electeur);
+			liste_electeurs.push_back(&electeur);
 		}	
 	}
 }

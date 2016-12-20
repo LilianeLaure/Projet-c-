@@ -4,14 +4,13 @@
 #include <cstdlib>
  
 using namespace std;
-class Electeur_Droite:public Electeur
+class Electeur_Gauche:public Electeur
 {
 	private :
 		int vote_;
 	public :
-		Electeur_Droite(Ville);
-		~Electeur_Droite(){};
+		Electeur_Gauche(Ville);
+		~Electeur_Gauche(){};
 		void set_vote(int i);
 };
 
-/*		du coup mettre set_vote et destructeur d'electeur en virtual */

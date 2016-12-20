@@ -15,7 +15,7 @@ class Electeur
 		Electeur(Ville);
 		virtual ~Electeur();
 		Ville get_ville();
-		virtual void set_vote(int i)=0;
+		virtual void set_vote(int i);
 		int get_num();
 		int parti; //0 pour gauche ; 1 pour droite
 };

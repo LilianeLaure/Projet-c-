@@ -1,7 +1,7 @@
 CC=g++
 CCFLAGS= -Wall -Werror -std=c++0x -g 
 LIBFLAGS= 
-SRC= Electeur.cc main.cc Simulateur.cc utility.cc Candidat.cc program.cc 
+SRC= Electeur.cc main.cc Simulateur.cc utility.cc Candidat_Gauche.cc Candidat_Droite.cc program.cc Electeur_Droite.cc Electeur_Gauche.cc
 OBJ= $(SRC:.cc=.o)
 EXEC=main
 
