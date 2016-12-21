@@ -18,5 +18,5 @@ public:
 private :
 	std::vector<string> program_gauche_;
 	std::vector<string> program_droite_;
-	std::vector<string> program_;
+	//std::vector<string> program_;
 };

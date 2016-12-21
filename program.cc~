@@ -4,7 +4,7 @@ Program::Program(const char* file){
 	if(fichier) {
 		vector<string> chaineVectorEclate_gauche;
 		vector<string> chaineVectorEclate_droite;
-		vector<string> chaineVectorEclate_;
+		//vector<string> chaineVectorEclate_;
 		string line;
 
 		getline(fichier,line);
@@ -15,31 +15,31 @@ Program::Program(const char* file){
 	    				vector<string> chaine=split(line,";");
 	    				chaineVectorEclate_gauche.push_back(chaine[0]);
 	 				chaineVectorEclate_gauche.push_back(chaine[1]);
-					chaineVectorEclate_.push_back(chaine[0]);
-					chaineVectorEclate_.push_back(chaine[1]);
+					//chaineVectorEclate_.push_back(chaine[0]);
+					//chaineVectorEclate_.push_back(chaine[1]);
 				}
 			}
 			program_gauche_=chaineVectorEclate_gauche;
-		}
-		if(line.compare("droite:")==0){
-			while(getline(fichier,line))
-			{
-				if(!line.empty()){
-	    				vector<string> chaine=split(line,";");
-	    				chaineVectorEclate_droite.push_back(chaine[0]);
-	 				chaineVectorEclate_droite.push_back(chaine[1]);
-					chaineVectorEclate_.push_back(chaine[0]);
-					chaineVectorEclate_.push_back(chaine[1]);
+			if(line.compare("droite:")==0){
+				while(getline(fichier,line))
+				{
+					if(!line.empty()){
+		    				vector<string> chaine=split(line,";");
+		    				chaineVectorEclate_droite.push_back(chaine[0]);
+		 				chaineVectorEclate_droite.push_back(chaine[1]);
+						//chaineVectorEclate_.push_back(chaine[0]);
+						//chaineVectorEclate_.push_back(chaine[1]);
+					}
 				}
-			}
 			program_droite_=chaineVectorEclate_droite;
+			}
 		}
     	//	std::cout<<"s: "<<chaine[0]<<" "<<chaine[1]<<std::endl;
 		
 		//for(int i=0;i<(int)chaineVectorEclate_.size();++i)
 			//std::cout<<chaineVectorEclate_[i]<<std::endl;
 		fichier.close();  // on ferme le fichier
-		program_=chaineVectorEclate_;
+		//program_=chaineVectorEclate_;
 	}
 	else{
 	std::cout<<"impossible d'ouvrir le fichier"<<std::endl;
