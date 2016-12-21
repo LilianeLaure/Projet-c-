@@ -1,13 +1,13 @@
 #include "Candidat_Droite.hh"
 int Candidat_Droite::num_cand=0;
 
-Candidat_Droite::Candidat_Droite(int size,int pb,Simulateur * sim,Program &program):
+Candidat_Droite::Candidat_Droite(int size,int pb,Program &program):
 	Electeur_Droite(Paris),
 	taille_program(size),
 	pb_(pb)
 	{
 		num_Candidat=num_cand;
-		program_perso=this->get_phrase(program);
+		program_perso=get_phrase(program);
 		num_cand++;
 	}
 
@@ -15,7 +15,7 @@ Candidat_Droite::~Candidat_Droite(){}
 
 vector<string> Candidat_Droite::get_phrase(Program prog){
 		vector<string> program;
-		program=prog.get_prog_gauche();
+		program=prog.get_prog_droite();
 		vector<string> chaine_phrase;
 		int cpt=0;
 		for(int i=0;i<(int)program.size()/2;++i){

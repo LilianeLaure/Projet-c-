@@ -33,13 +33,13 @@ int main(){
 		std::cout<<"-----------------------------"<<std::endl;
 		if (i<n1){
 			//gauche
-			Candidat_Gauche tab(taille,pb,&simu,prog_general);
+			Candidat_Gauche tab(taille,pb,prog_general);
 			simu.add_Candidat_Gauche(tab);
 			cout<<tab;
 		}
 		else{
 			//droite
-			Candidat_Droite tab(taille,pb,&simu,prog_general);
+			Candidat_Droite tab(taille,pb,prog_general);
 			simu.add_Candidat_Droite(tab);
 			cout<<tab;
 		}

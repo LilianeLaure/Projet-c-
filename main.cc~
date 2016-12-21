@@ -3,7 +3,7 @@
 #include <list>
 #include <vector>
 #include <string>
-//#include "Simulateur.hh"
+#include "Simulateur.hh"
 #include <cstdlib> 
 using namespace std;
 

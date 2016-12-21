@@ -1,15 +1,13 @@
 #pragma once
 #include <iostream>
-#include "Simulateur.hh"
 #include <vector>
 #include <string>
 #include "program.hh"
 #include <cstdlib>
 #include "Electeur_Droite.hh"
 
-
-class Simulateur;
 using namespace std;
+
 class Candidat_Droite:public Electeur_Droite
 {
 	private :
@@ -22,7 +20,7 @@ class Candidat_Droite:public Electeur_Droite
 		//int parti_;//0 si gauche,1 si droite
 	public :
 		static int num_cand;
-		Candidat_Droite(int taille_prog,int pb,Simulateur* sim,Program &program);
+		Candidat_Droite(int taille_prog,int pb,Program &program);
 		~Candidat_Droite();
 		int get_nb_phrases_idiotes();
 		vector<string> get_phrase(Program program_);
