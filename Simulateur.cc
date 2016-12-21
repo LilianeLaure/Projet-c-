@@ -1,9 +1,9 @@
 #include <iostream>
 #include "Simulateur.hh"
 
-Simulateur::Simulateur(int nombre):pb_(40),pi_(15),nombre_(nombre)
+Simulateur::Simulateur(int nombre):pb_(40),pi_(15),nombre_electeurs_(nombre)
 {
-	for(int i=0 ; i<nombre_ ; ++i)
+	for(int i=0 ; i<nombre_electeurs_ ; ++i)
 	{
 		int alea=rand()%3;
 		Ville ville;
@@ -16,7 +16,7 @@ Simulateur::Simulateur(int nombre):pb_(40),pi_(15),nombre_(nombre)
 				ville=Nantes;break;
 			break;
 		}
-		if (i<nombre_/2){
+		if (i<nombre_electeurs_/2){
 			Electeur_Gauche* electeur=new Electeur_Gauche(ville);
 			liste_electeurs.push_back(electeur);
 		}

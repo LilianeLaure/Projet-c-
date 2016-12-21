@@ -5,8 +5,6 @@
 using namespace std;
 class Electeur_Gauche:public Electeur
 {
-	private :
-		int vote_;
 	public :
 		Electeur_Gauche(Ville);
 		~Electeur_Gauche(){};

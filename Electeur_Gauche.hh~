@@ -1,13 +1,12 @@
 #pragma once
 #include <iostream>
 #include "Electeur.hh"
-#include <cstdlib>
  
 using namespace std;
 class Electeur_Gauche:public Electeur
 {
 	private :
-		int vote_;
+		//int vote_;
 	public :
 		Electeur_Gauche(Ville);
 		~Electeur_Gauche(){};

@@ -16,7 +16,7 @@ class Simulateur
 		std::vector <Candidat_Droite> vector_candidats_droite;
 		std::vector <Candidat_Gauche> vector_candidats_gauche;
 		std::list <Electeur*> liste_electeurs;
-		int nombre_;//nombre electeurs
+		int nombre_electeurs_;//nombre electeurs
 	public :
 		Simulateur(int nombre);
 		~Simulateur();

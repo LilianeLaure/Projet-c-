@@ -2,9 +2,6 @@
 #include <iostream>
 #include "Candidat_Gauche.hh"
 #include "Candidat_Droite.hh"
-#include "Electeur_Droite.hh"
-#include "Electeur_Gauche.hh"
-#include "Electeur.hh"
 #include <vector>
 #include <list>
 
@@ -22,7 +19,7 @@ class Simulateur
 		int nombre_;//nombre electeurs
 	public :
 		Simulateur(int nombre);
-		~Simulateur(){};
+		~Simulateur();
 		void add_Candidat_Gauche(Candidat_Gauche & candidat);
 		void add_Candidat_Droite(Candidat_Droite & candidat);
 		void run();
