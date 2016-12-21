@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include "Electeur.hh"
 #include "Simulateur.hh"
 #include <vector>
 #include <string>

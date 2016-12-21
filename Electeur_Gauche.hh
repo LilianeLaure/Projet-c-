@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "Electeur.hh"
-#include <cstdlib>
  
 using namespace std;
 class Electeur_Gauche:public Electeur

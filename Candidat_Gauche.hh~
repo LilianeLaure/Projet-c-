@@ -30,4 +30,4 @@ class Candidat_Gauche:public Electeur_Gauche
 		vector<string> get_prog();
 };
 
-std::ostream& operator<<(std::ostream& stream,Candidat Cdt); 
+std::ostream& operator<<(std::ostream& stream,Candidat_Gauche Cdt); 
