@@ -4,17 +4,24 @@
 #include <map>
 #include <list>
 
-list& operator=( const list& other );
 class Sondage
 {
-	public : 
-		int xbarre();
-	
+	public :
+		Sondage(Simulateur *sim , float percent);
+		~Sondage(); 
+		int nombre_villes(); 
+		void sonder(Ville ville);
+		void vainqueur_sondage(pair<int, size_t> p);
+		void vainqueur();
+		void run();
+		void result_sondage();
 	private : 
-		Simulateur s*;
-		int sample_; //sample est inferieur a la taille de la population : checker avec get nombre
+		int nb_villes;
+		vector <Electeur*> vect_electeurs;
+		vector <Electeur*> vote_electeurs;
+		int sample_; // regarder sample pour les proportions d'habitants dans chaque ville
 		int percent_;
-		map<int, int> vote_candidats_;
-		list liste_electors_;
+		map<int, size_t> resultats;
+};
 
-}
+
