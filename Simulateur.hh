@@ -4,7 +4,11 @@
 #include "Candidat_Droite.hh"
 #include <vector>
 #include <list>
+#include <algorithm>
 
+
+//attention, etre sure que le candidat vote pour lui-meme!!! //rajout dans candidat
+//attention au test, quand 
 using namespace std;
 class Candidat_Gauche;
 class Candidat_Droite;
@@ -27,6 +31,12 @@ class Simulateur
 		int max_phrases_Droite();
 		int min_phrases_Droite();
 		int min_phrases_Gauche();
+		list<Electeur*> get_liste_electeurs();
+		int get_nombre_candidats();
+		int vote_au_hasard();
+		int get_nombre_electeurs();
+		vector<Candidat_Gauche> get_candidats_gauche();
+		vector<Candidat_Droite> get_candidats_droite();
 		//int get_next_task();
 };
 

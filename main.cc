@@ -3,11 +3,13 @@
 #include <list>
 #include <vector>
 #include <string>
-#include "Simulateur.hh"
+#include "Sondage.hh"
+#include "Resultats.hh"
 #include <cstdlib> 
 using namespace std;
 
 int main(){
+	srand(time(NULL));
 	int n,n1,n2,taille,pb;
 	cout<<"Combien de candidats voulez-vous de gauche ? ";
 	cin>>n1;
@@ -46,6 +48,11 @@ int main(){
 		std::cout<<"-----------------------------"<<std::endl;
 	}			
 	simu.run();
+	//Sondage sondage(&simu, 0.18);
+	//sondage.run();
+	Resultats res(&simu);
+	res.run();
+	
 	return 0;
 
 }
