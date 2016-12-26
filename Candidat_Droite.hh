@@ -19,7 +19,7 @@ class Candidat_Droite:public Electeur_Droite
 		int nb_phrases_idiotes;
 		//int parti_;//0 si gauche,1 si droite
 	public :
-		static int num_cand;
+		//static int num_cand;
 		Candidat_Droite(int taille_prog,int pb,Program &program);
 		~Candidat_Droite();
 		int get_nb_phrases_idiotes();

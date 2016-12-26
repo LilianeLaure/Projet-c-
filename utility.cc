@@ -25,3 +25,20 @@ std::vector<std::string> split(const std::string& s, const std::string& s_s )
     }
   return res;
 }
+
+bool compare(pair <int, size_t> p, pair <int, size_t> q ){
+	return p.second < q.second;
+}
+
+
+void afficher_element1( vector< pair<int, size_t> > v){
+	for(auto const & it : v)
+		cout << it.first << "\t";
+	cout << endl;
+}
+
+void afficher_element2( vector< pair<int, size_t> > v, int nombre){
+	for(auto const & it : v)
+		cout << (float)it.second * 100/nombre << "\t";
+	cout << endl;
+}

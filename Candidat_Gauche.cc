@@ -7,6 +7,7 @@ Candidat_Gauche::Candidat_Gauche(int size,int pb,Program &program):
 	pb_(pb)
 	{
 		num_Candidat=num_cand;
+		set_vote(num_Candidat); //il vote pour lui-meme
 		program_perso=get_phrase(program);
 		num_cand++;
 	}
