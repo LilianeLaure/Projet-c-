@@ -46,40 +46,29 @@ void Simulateur::run(){
 	double alea;
 	for( auto & it : liste_electeurs){
 		alea=rand()%100;
-		cout << "alea = " << alea << endl;
-		if(it->get_vote()==-1){ //seulement s'il n'est pas candidat, s'il est candidat, il vote pour lui-meme
+		if(it->get_vote()==-1){ 
 			if(alea<pi_){
-				if(it->parti==0){
+				if(it->parti==0)
 					it->set_vote(min_phrases_Gauche());
-					cout << "min_phrases_gauche " << min_phrases_Gauche() << endl;
-					}
-				else{
+				else
 					it->set_vote(min_phrases_Droite());
-					cout << "min_phrases_droite" << min_phrases_Droite() << endl;
-					}
 			}	
 			else if(alea>pb_){
-				if(it->parti==0){
+				if(it->parti==0)
 					it->set_vote(max_phrases_Gauche());
-					cout << "max_phrases_gauche" << max_phrases_Gauche() << endl;
-					}
-				else{
+				else
 					it->set_vote(max_phrases_Droite());	
-					cout << "max_phrases_droite " << max_phrases_Droite() << endl;
-					}
 			}
 			else{
-					alea=rand()%100+1;
-					if(alea<50){
-					cout << "j'ai vote au hasard" << endl; 
-					it->set_vote( vote_au_hasard() );
-					} //on initialisait deja les votes a -1 donc pas de else
-					else{
-					cout << "je vote blanc" << endl; 
-					}
+				alea=rand()%100+1;
+				if(alea<50){
+					if(it->parti==0)
+						it->set_vote( vote_au_hasard_gauche() );
+					else 
+						it->set_vote( vote_au_hasard_droite() );
+				}
 			}
-		}//if candidat
-		//cout << it->get_vote() << endl;
+		}
 	}	
 }
 
@@ -143,11 +132,23 @@ int Simulateur :: get_nombre_candidats(){
 	return vector_candidats_droite.size()+vector_candidats_gauche.size();
 }
 
-int Simulateur::vote_au_hasard(){
-	double alea=rand()%get_nombre_candidats();
+int Simulateur::vote_au_hasard_gauche(){
+	double alea=-1;
+	if(vector_candidats_gauche.size()!=0){
+		alea=rand()%vector_candidats_gauche.size();
+		alea=vector_candidats_gauche[alea].get_num_Candidat();
+	}
 	return alea;
 }
 
+int Simulateur::vote_au_hasard_droite(){
+	double alea=-1;
+	if(vector_candidats_droite.size()!=0){
+		alea=rand()%vector_candidats_droite.size();
+		alea=vector_candidats_droite[alea].get_num_Candidat();
+	}
+	return alea;
+}
 int Simulateur::get_nombre_electeurs(){
 	return nombre_electeurs_;
 }
@@ -158,4 +159,19 @@ vector<Candidat_Droite> Simulateur::get_candidats_droite(){
 
 vector<Candidat_Gauche> Simulateur::get_candidats_gauche(){
 	return vector_candidats_gauche;
+}
+
+void Simulateur::set_candidats_gauche (vector <Candidat_Gauche> vg){
+	vector_candidats_gauche=vg;
+}
+
+void Simulateur::set_candidats_droite(vector <Candidat_Droite> vd){
+	vector_candidats_droite=vd;
+}
+
+int Simulateur::get_nombre_villes(){
+	map<Ville, size_t> compte;
+	for(auto const& it : liste_electeurs)
+		compte[it->get_ville()]++;
+	return compte.size();
 }

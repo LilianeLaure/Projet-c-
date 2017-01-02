@@ -19,6 +19,7 @@ void Resultats::resultats_election( string chaine){
 			vecteur.push_back(max);
 			temp.erase(max.first);
 	}
+	cout << endl;
 	cout  << "****** Resultats du " << chaine << " ****** " << endl;
 	afficher_element1(vecteur);
 	afficher_element2(vecteur, s->get_nombre_electeurs() );
@@ -31,10 +32,11 @@ bool Resultats::premier_tour(){ //on n'a pas besoin du nb de candidats en fait
 		if( (float)vecteur[0].second * 100 / s->get_nombre_electeurs() > 50 ){
 			if(vecteur[0].first==-1){
 				cout << "Les electeurs ne veulent pas de president..." << endl;
+				cout << "Il y aura donc un second tour "<<endl;
 				return true;
 			}
 			else{
-				cout << "Le nouveau president est le candidat " << vecteur[0].first << " avec " << vecteur[0].second <<  "des voix ." << endl;
+				cout << "Le nouveau president est le candidat " << vecteur[0].first << " avec " << vecteur[0].second <<  " des voix ." << endl;
 				return true;
 			}
 		}
@@ -44,35 +46,32 @@ bool Resultats::premier_tour(){ //on n'a pas besoin du nb de candidats en fait
 
 void Resultats::second_tour(){
 	if( !premier_tour()){
+		vector<Candidat_Gauche> temp_g;
+		vector<Candidat_Droite> temp_d;
 		for(auto & it: s->get_liste_electeurs() ){
 			it->set_vote(-1);		
 		}
 		for(auto & it : s->get_candidats_gauche() ){
-			if(it.get_num_Candidat()!=vecteur[0].first || it.get_num_Candidat()!=vecteur[1].first){
-				swap(it, s->get_candidats_gauche().back() );
-				s->get_candidats_gauche().pop_back();
-			}
-			else{
-				it.set_vote(it.get_num_Candidat()); //encore une fois, il vote pour lui-meme
+			if(it.get_num_Candidat()==vecteur[0].first || it.get_num_Candidat()==vecteur[1].first){
+					temp_g.push_back(it);
 			}
 		}
 		for(auto & it : s->get_candidats_droite() ){
-			if(it.get_num_Candidat()!=vecteur[0].first || it.get_num_Candidat()!=vecteur[1].first){
-				swap(it, s->get_candidats_droite().back() );
-				s->get_candidats_droite().pop_back();
-			}
-			else{
-				it.set_vote(it.get_num_Candidat()); //encore une fois, il vote pour lui-meme
+			if(it.get_num_Candidat()==vecteur[0].first || it.get_num_Candidat()==vecteur[1].first){
+					temp_d.push_back(it);
 			}
 		}
-	}
+		s->set_candidats_gauche(temp_g);
+		s->set_candidats_droite(temp_d);
+		cout<<endl;
+	}//if ! premier tour
 }
 
 void Resultats::resultats_second_tour(){
 	second_tour();
-	s->run();
 	resultats.clear();
 	vecteur.clear();
+	s->run();
 	compter_les_votes();
 	resultats_election( "second tour");
 	
@@ -80,17 +79,24 @@ void Resultats::resultats_second_tour(){
 		if(vecteur[0].first==-1)
 			cout << "Les electeurs ne veulent pas de president..." << endl;
 		else
-			cout << "Le nouveau president est le candidat " << vecteur[0].first << " avec " << vecteur[0].second <<  "des voix ." << endl;
+			cout << "Le nouveau president est le candidat " << vecteur[0].first << " avec " << vecteur[0].second <<  " des voix ." << endl;
 	}
 }
 
-/*void Resultats::resultats_par_ville(Ville ville){
-
-}*/
 
 void Resultats::run(){
 	compter_les_votes();
 	resultats_election( "premier tour");
 	premier_tour();
 	resultats_second_tour();
+}
+
+ostream& operator<<(ostream& os, const Resultats& r)  
+{  
+	string s = "Le candidat " + to_string(r.vecteur[0].first) +" a remporte l'election presidentielle !" ;
+	string line="";
+	for(size_t i=0; i<s.size()+6; ++i)
+		line+="-";
+	os << line+"\n"+ "|  " + s+ "  |"+ "\n" +line+"\n";   
+   return os;  
 }
