@@ -1,14 +1,17 @@
 #include "Candidat_Droite.hh"
-int Candidat_Droite::num_cand=0;
+#include "Candidat_Gauche.hh"
+//int Candidat_Droite::num_cand=0;
 
 Candidat_Droite::Candidat_Droite(int size,int pb,Program &program):
 	Electeur_Droite(Paris),
 	taille_program(size),
 	pb_(pb)
 	{
-		num_Candidat=num_cand;
+		num_Candidat=Candidat_Gauche::num_cand;
+		set_vote(num_Candidat); //il vote pour lui-meme
+		Candidat_Gauche::num_cand++;
 		program_perso=get_phrase(program);
-		num_cand++;
+		
 	}
 
 Candidat_Droite::~Candidat_Droite(){}

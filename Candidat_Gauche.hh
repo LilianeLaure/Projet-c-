@@ -18,7 +18,7 @@ class Candidat_Gauche:public Electeur_Gauche
 		int nb_phrases_idiotes;
 	public :
 		static int num_cand;
-		Candidat_Gauche(int taille_prog,int pb,Program &program);
+		Candidat_Gauche(int taille_prog,int pb,Program &program,Ville ville);
 		~Candidat_Gauche();
 		int get_nb_phrases_idiotes();
 		vector<string> get_phrase(Program program_);

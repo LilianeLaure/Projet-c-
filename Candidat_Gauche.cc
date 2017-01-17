@@ -1,8 +1,8 @@
 #include "Candidat_Gauche.hh"
 int Candidat_Gauche::num_cand=0;
 
-Candidat_Gauche::Candidat_Gauche(int size,int pb,Program &program):
-	Electeur_Gauche(Paris),//a modifier
+Candidat_Gauche::Candidat_Gauche(int size,int pb,Program &program,Ville ville):
+	Electeur_Gauche(ville),
 	taille_program(size),
 	pb_(pb)
 	{

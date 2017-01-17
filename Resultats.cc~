@@ -80,7 +80,7 @@ void Resultats::resultats_second_tour(){
 		if(vecteur[0].first==-1)
 			cout << "Les electeurs ne veulent pas de president..." << endl;
 		else
-			cout << "Le nouveau president est le candidat " << vecteur[0].first << " avec " << vecteur[0].second <<  " des voix ." << endl;
+			cout << "Le nouveau president est le candidat " << vecteur[0].first << " avec " << vecteur[0].second <<  "des voix ." << endl;
 	}
 }
 

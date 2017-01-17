@@ -33,15 +33,26 @@ int main(){
 		tab+="a"+to_string(i);
 		std::cout << "PROGRAMME du candidat n° "<< i+1<<std::endl;
 		std::cout<<"-----------------------------"<<std::endl;
+		int alea=rand()%3;
+		Ville ville;
+		switch (alea){
+			case 0:
+				ville=Paris;break;
+			case 1:
+				ville=Lyon;break;
+			default:
+				ville=Nantes;break;
+			break;
+		}
 		if (i<n1){
 			//gauche
-			Candidat_Gauche tab(taille,pb,prog_general);
+			Candidat_Gauche tab(taille,pb,prog_general,ville);
 			simu.add_Candidat_Gauche(tab);
 			cout<<tab;
 		}
 		else{
 			//droite
-			Candidat_Droite tab(taille,pb,prog_general);
+			Candidat_Droite tab(taille,pb,prog_general,ville);
 			simu.add_Candidat_Droite(tab);
 			cout<<tab;
 		}
