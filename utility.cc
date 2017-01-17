@@ -42,3 +42,10 @@ void afficher_element2( vector< pair<int, size_t> > v, int nombre){
 		cout << (float)it.second * 100/nombre << "\t";
 	cout << endl;
 }
+/*
+vector<Electeur*> convert( list<Electeur*> l){
+	vector<Electeur*> v;
+	for(auto const & it : l )
+		v.push_back(it);
+	return v;
+}*/

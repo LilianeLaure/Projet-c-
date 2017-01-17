@@ -63,6 +63,7 @@ int main(){
 	//sondage.run();
 	Resultats res(&simu);
 	res.run();
+	cout << res << endl;
 	
 	return 0;
 

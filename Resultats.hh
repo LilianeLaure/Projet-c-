@@ -14,10 +14,12 @@ class Resultats{
 		~Resultats();
 		void resultats_election(string);
 		void compter_les_votes();
+		//virtual void compter_les_votes();
 		bool premier_tour();
 		void second_tour();
 		void resultats_second_tour();
 		void run();
+		friend ostream& operator<<(ostream& os, const Resultats& r); 
 		//void resultats_par_ville(Ville ville);
 	private:
 		Simulateur *s;
