@@ -1,9 +1,25 @@
 gauche:
 je serrai le candidat du rassemblement ;Les salariés doivent pouvoir travailler plus, sans être payés plus
-Je suis candidat pour la révolution ;je ne me representerais pas
+Je suis candidat pour la révolution ;je ne me représenterai pas
 votez pour moi ;ne votez pas pour moi
-le changement c'est maintenant ;je serrai le candidat du pays désuni 
+le changement c'est maintenant ;je serai le candidat du pays désuni 
+le rassemblement permet une symbiose unitaire ;Je suis contre le réchauffement climatique
+Je permettrai aux petites entreprises de grandir ;mort à la pollution
+Si je deviens votre président, le pouvoir sera entre vos mains ;J'aime le pouvoir
+Je suis pour rassembler la gauche ;Un pour tous, tous pour moi
+Si vous votez pour moi, je baisserai les impôts ;Si vous vôtez pour moi, j'éradiquerai les pots de vin moyennant finance
+Il faut penser de nouvelles initiatives pour lutter contre le réchauffement climatique ;mes chers compatriotes, si vous votez pour moi, vous aurez le droit à ma reconnaissance éternelle
+Il faut favoriser la mixité sociale dans les lycées ;50% de réduction sur votre prochaine livraison Pizza Hut si vous votez pour mon parti
+
 droite:
 travaillez plus pour gagnez plus ;c'est abracadabrantesque
 votez pour moi ;le ticket de metro coute 4€ et quelques
 avec moi le chômage diminuera ;le pain au chocolat coûte 15 centimes
+Il faut investir dans les entreprises nationales ;Vive le travail et le cheese Burger
+Chaque jour, le chômage augmente, il faut inverser la courbe ;Ma cravate pue la mayonnaise
+Il faut renforcer nos frontières ;Français,française, chiens et ouistitis: Je vous ai compris! 
+Je garderai les droits à l'avortement ;droit à l'avortement pour les hommes
+Il faut encourager le progrès ;Légalisation des drogues durs et prohibition de l'herbe à chat
+Il faut permettre à tout le monde un accès à l'éducation supérieure ;Votez pour moi, vous aurez pleins de fraises tagada
+Il faut aider les pays en voie de développement ;Tous ensemble pour la paix dans le monde et les croquettes végétariennes
+On ne permettra le cumul des mandats ;Suppression de la météo sur toutes chaines
